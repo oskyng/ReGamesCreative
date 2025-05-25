@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videojuegos de RPG - Mi Biblioteca</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <i class="fas fa-gamepad me-2"></i> ReGamesCreative - Mi Biblioteca de Videojuegos
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="rpg.html">RPG</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about">Acerca de</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <h2 class="text-center mb-5 text-primary">Juegos de RPG</h2>
+
+        <section id="search-filter" class="row mb-4 gx-3 justify-content-center">
+            <div class="col-md-5 col-lg-4 mb-3">
+                <input type="text" id="search-input" class="form-control" placeholder="Buscar videojuegos...">
+            </div>
+            <div class="col-md-3 col-lg-2 mb-3">
+                <select id="platform-filter" class="form-select">
+                    <option value="">Todas las plataformas</option>
+                    <option value="PC">PC</option>
+                    <option value="PlayStation 5">PlayStation 5</option>
+                    <option value="Xbox Series X/S">Xbox Series X/S</option>
+                    <option value="Nintendo Switch">Nintendo Switch</option>
+                </select>
+            </div>
+            <div class="col-md-3 col-lg-2 mb-3">
+                <select id="genre-filter" class="form-select">
+                    <option value="">Todos los géneros</option>
+                    <option value="JRPG">JRPG</option>
+                    <option value="ARPG">ARPG</option>
+                    <option value="CRPG">CRPG</option>
+                </select>
+            </div>
+        </section>
+
+        <section id="games" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            <div class="col">
+                <div class="card h-100 game-card bg-dark text-white border-secondary">
+                    <img src="/img/baldrs_gate_3.jpg" class="card-img-top" alt="Portada Baldur's Gate 3">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-primary">Baldur's Gate 3</h5>
+                        <p class="card-text small">Plataforma: PC, PS5 | Género: CRPG, Fantasía</p>
+                        <p class="card-text flex-grow-1">Una inmersiva aventura de rol con decisiones que importan y combates tácticos por turnos.</p>
+                        <p class="card-text text-info"><i class="fas fa-clock me-2"></i>Horas de juego: +100h</p>
+                        <a href="#" class="btn btn-danger mt-auto">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 game-card bg-dark text-white border-secondary">
+                    <img src="/img/Elden_Ring.jpg" class="card-img-top" alt="Portada Elden Ring">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-primary">Elden Ring</h5>
+                        <p class="card-text small">Plataforma: PC, PS4, PS5, Xbox One, Series X/S | Género: ARPG, Mundo Abierto</p>
+                        <p class="card-text flex-grow-1">Un vasto mundo abierto de fantasía oscura con desafiantes combates y exploración.</p>
+                        <p class="card-text text-info"><i class="fas fa-clock me-2"></i>Horas de juego: ~80-130h</p>
+                        <a href="#" class="btn btn-danger mt-auto">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 game-card bg-dark text-white border-secondary">
+                    <img src="/img/final_fantasy_vii_rebirth.jpg" class="card-img-top" alt="Portada Final Fantasy VII Rebirth">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-primary">Final Fantasy VII Rebirth</h5>
+                        <p class="card-text small">Plataforma: PS5 | Género: JRPG</p>
+                        <p class="card-text flex-grow-1">La esperada continuación del remake, expandiendo la épica aventura de Cloud y sus compañeros.</p>
+                        <p class="card-text text-info"><i class="fas fa-clock me-2"></i>Horas de juego: ~40-60h</p>
+                        <a href="#" class="btn btn-danger mt-auto">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 game-card bg-dark text-white border-secondary">
+                    <img src="/img/Cyberpunk_2077.jpg" class="card-img-top" alt="Portada Cyberpunk 2077">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-primary">Cyberpunk 2077</h5>
+                        <p class="card-text small">Plataforma: PC, PS5, Xbox Series X/S | Género: ARPG, Ciberpunk</p>
+                        <p class="card-text flex-grow-1">Adéntrate en Night City, un futuro distópico lleno de crimen, implantes y corporaciones.</p>
+                        <p class="card-text text-info"><i class="fas fa-clock me-2"></i>Horas de juego: ~60-100h</p>
+                        <a href="#" class="btn btn-danger mt-auto">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="footer bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 ReGames. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
