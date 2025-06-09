@@ -1,27 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const formulario = document.getElementById("formulario-inscripcion");
-
-    formulario.addEventListener("submit", function (e) {
-        e.preventDefault();
-        if (validarFormulario()) {
-            alert("Formulario enviado con éxito");
-            formulario.reset();
-        }
-    });
-});
-
-function validarFormulario() {
-    let esValido = true;
-    esValido &= validarCampoVacio("nombre");
-    esValido &= validarCampoVacio("usuario");
-    esValido &= validarEmail("email");
-    esValido &= validarFechaNacimiento("fechaNacimiento");
-    esValido &= validarPassword("password", "confirmarPassword");
-
-    return Boolean(esValido);
-}
-
-function validarCampoVacio(idCampo) {
+function validateEmptyString(idCampo) {
     const campo = document.getElementById(idCampo);
 
     if (campo.value.trim() === "") {
@@ -34,7 +11,7 @@ function validarCampoVacio(idCampo) {
     }
 }
 
-function validarEmail(idCampo) {
+function validateEmail(idCampo) {
     const campo = document.getElementById(idCampo);
 
     const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -49,7 +26,7 @@ function validarEmail(idCampo) {
     }
 }
 
-function validarFechaNacimiento(idCampo) {
+function validateDates(idCampo) {
     const campo = document.getElementById(idCampo);
 
     const fecha = new Date(campo.value);
@@ -70,7 +47,7 @@ function validarFechaNacimiento(idCampo) {
     }
 }
 
-function validarPassword(idPassword, idConfirmar) {
+function validatePassword(idPassword, idConfirmar) {
     const pass = document.getElementById(idPassword);
     const confirm = document.getElementById(idConfirmar);
 

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña - Mi Biblioteca de Videojuegos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-gamepad me-2 text-primary"></i> Mi Biblioteca de Videojuegos
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mi_biblioteca.html">Mi Biblioteca</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="agregar_juego.html">Añadir Juego</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="favoritos.html">Favoritos</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCategories" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categorías
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownCategories">
+                            <li><a class="dropdown-item" href="categorias/accion.html">Acción</a></li>
+                            <li><a class="dropdown-item" href="categorias/rpg.html">RPG</a></li>
+                            <li><a class="dropdown-item" href="categorias/aventura.html">Aventura</a></li>
+                            <li><a class="dropdown-item" href="categorias/estrategia.html">Estrategia</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="index.html">Ver Todas</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="navbar-nav" id="auth-nav-links">
+                    <li class="nav-item" id="nav-login-link">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item" id="nav-register-link">
+                        <a class="nav-link" href="registro.html">Registro</a>
+                    </li>
+                    <li class="nav-item dropdown d-none" id="nav-user-profile">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user-circle me-2"></i><span id="nav-username"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                            <li><h6 class="dropdown-header" id="nav-user-role"></h6></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="nav-logout-btn">Cerrar Sesión</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-5 d-flex justify-content-center align-items-center" style="min-height: 60vh;">
+        <div class="card-body shadow-lg p-4 p-md-5" style="max-width: 500px; width: 100%;">
+            <div class="card-body">
+                <h2 class="card-title text-center mb-4 text-light display-6 fw-bold">Recuperar Contraseña</h2>
+                <p class="text-center mb-4">Ingresa tu correo electrónico para enviarte un enlace de recuperación.</p>
+                <form id="recovery-form" novalidate>
+                    <div class="mb-3">
+                        <label for="recoveryEmailInput" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="recoveryEmailInput" placeholder="tu@ejemplo.com" required>
+                        <div class="invalid-feedback">Correo inválido.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="recoveryEmailInput" class="form-label">Nueva Contraseña</label>
+                        <input type="password" class="form-control" id="recoveryPasswordInput" placeholder="********" required>
+                        <div class="invalid-feedback">Debe tener mínimo 8 caracteres, 1 número, 1 mayúscula y 1 caracter especial.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="recoveryEmailInput" class="form-label">Nueva Contraseña</label>
+                        <input type="password" class="form-control" id="recoveryConfirmPasswordInput" placeholder="********" required>
+                        <div class="invalid-feedback">Las contraseñas no coinciden.</div>
+                    </div>
+                    <div class="d-grid gap-2 mb-3">
+                        <button type="submit" class="btn btn-primary btn-lg">Cambiar contraseña</button>
+                    </div>
+                    <p class="text-center">
+                        <a href="login.html" class="text-primary text-decoration-none">Volver al Login</a>
+                    </p>
+                    <div id="recovery-message" class="mt-3 text-center"></div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 ReGames. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="/js/authService.js"></script>
+    <script src="/js/recuperacionPage.js"></script>
+</body>
+</html>

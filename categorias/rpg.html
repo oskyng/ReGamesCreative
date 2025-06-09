@@ -3,30 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Videojuegos de RPG - Mi Biblioteca</title>
+    <title>ReGamesCreative - Mi Biblioteca</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <header class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="../index.html">
-                <i class="fas fa-gamepad me-2"></i> ReGamesCreative - Mi Biblioteca de Videojuegos
+            <a class="navbar-brand text-primary" href="/index.html">
+                <i class="fas fa-gamepad me-2 text-primary"></i> ReGamesCreative
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html">Inicio</a>
+                        <a class="nav-link" href="/index.html">Inicio</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="rpg.html">RPG</a>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCategories" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categorías
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownCategories">
+                            <li><a class="dropdown-item" href="/categorias/accion.html">Acción</a></li>
+                            <li><a class="dropdown-item" href="/categorias/rpg.html">RPG</a></li>
+                            <li><a class="dropdown-item" href="/categorias/aventura.html">Aventura</a></li>
+                            <li><a class="dropdown-item" href="/categorias/estrategia.html">Estrategia</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="/index.html">Ver Todas</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.html#about">Acerca de</a>
+                </ul>
+                <ul class="navbar-nav" id="auth-nav-links">
+                    <li class="nav-item" id="nav-login-link">
+                        <a class="nav-link" href="/usuario/Login.html">Login</a>
+                    </li>
+                    <li class="nav-item" id="nav-register-link">
+                        <a class="nav-link" aria-current="page" href="/usuario/registro.html">Registro</a>
+                    </li>
+                    <li class="nav-item dropdown d-none" id="nav-user-profile">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user-circle me-2"></i><span id="nav-username"></span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownUser">
+                            <li><h6 class="dropdown-header" id="nav-user-role"></h6></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/usuario/perfil_usuario.html">Mi Perfil</a></li>
+                            <li><a class="dropdown-item" href="/mi_biblioteca.html">Mi Biblioteca</a></li>
+                            <li><a class="dropdown-item" href="/agregar_juego.html">Añadir Juego</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="nav-logout-btn">Cerrar Sesión</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -61,53 +94,101 @@
 
         <section id="games" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
             <div class="col">
-                <div class="card h-100 game-card bg-dark text-white border-secondary">
+                <div class="card h-100 game-card bg-dark text-white border-secondary"
+                    data-game-title="Baldur's Gate 3"
+                    data-game-description="Una inmersiva aventura de rol con decisiones que importan y combates tácticos por turnos."
+                    data-game-platform="PC, PS5" 
+                    data-game-genre="CRPG, Fantasía" 
+                    data-game-hours="8"
+                    data-game-image="/img/baldrs_gate_3.jpg">
                     <img src="/img/baldrs_gate_3.jpg" class="card-img-top" alt="Portada Baldur's Gate 3">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title text-primary">Baldur's Gate 3</h5>
                         <p class="card-text small">Plataforma: PC, PS5 | Género: CRPG, Fantasía</p>
                         <p class="card-text flex-grow-1">Una inmersiva aventura de rol con decisiones que importan y combates tácticos por turnos.</p>
                         <p class="card-text text-info"><i class="fas fa-clock me-2"></i>Horas de juego: +100h</p>
-                        <a href="#" class="btn btn-danger mt-auto">Ver Detalles</a>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <button type="button" class="btn btn-sm btn-danger view-details-btn" data-bs-toggle="modal" data-bs-target="#gameDetailModal">Ver Detalles</button>
+                            <button type="button" class="btn btn-sm btn-success add-to-user-library-btn">
+                                <i class="fas fa-plus-circle me-1"></i> Añadir a Mi Biblioteca
+                            </button>
+                        </div>
+                        <div class="add-to-library-message mt-2 text-center text-sm"></div>
                     </div>
                 </div>
             </div>
 
             <div class="col">
-                <div class="card h-100 game-card bg-dark text-white border-secondary">
+                <div class="card h-100 game-card bg-dark text-white border-secondary"
+                    data-game-title="Elden Ring"
+                    data-game-description="Un vasto mundo abierto de fantasía oscura con desafiantes combates y exploración."
+                    data-game-platform="PC, PS4, PS5, Xbox One, Series X/S" 
+                    data-game-genre="ARPG, Mundo Abierto" 
+                    data-game-hours="8"
+                    data-game-image="/img/Elden_Ring.jpg">
                     <img src="/img/Elden_Ring.jpg" class="card-img-top" alt="Portada Elden Ring">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title text-primary">Elden Ring</h5>
                         <p class="card-text small">Plataforma: PC, PS4, PS5, Xbox One, Series X/S | Género: ARPG, Mundo Abierto</p>
                         <p class="card-text flex-grow-1">Un vasto mundo abierto de fantasía oscura con desafiantes combates y exploración.</p>
                         <p class="card-text text-info"><i class="fas fa-clock me-2"></i>Horas de juego: ~80-130h</p>
-                        <a href="#" class="btn btn-danger mt-auto">Ver Detalles</a>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <button type="button" class="btn btn-sm btn-danger view-details-btn" data-bs-toggle="modal" data-bs-target="#gameDetailModal">Ver Detalles</button>
+                            <button type="button" class="btn btn-sm btn-success add-to-user-library-btn">
+                                <i class="fas fa-plus-circle me-1"></i> Añadir a Mi Biblioteca
+                            </button>
+                        </div>
+                        <div class="add-to-library-message mt-2 text-center text-sm"></div>
                     </div>
                 </div>
             </div>
 
             <div class="col">
-                <div class="card h-100 game-card bg-dark text-white border-secondary">
+                <div class="card h-100 game-card bg-dark text-white border-secondary"
+                    data-game-title="Final Fantasy VII Rebirth"
+                    data-game-description="La esperada continuación del remake, expandiendo la épica aventura de Cloud y sus compañeros."
+                    data-game-platform="PS5" 
+                    data-game-genre="JRPG" 
+                    data-game-hours="8"
+                    data-game-image="/img/final_fantasy_vii_rebirth.jpg">
                     <img src="/img/final_fantasy_vii_rebirth.jpg" class="card-img-top" alt="Portada Final Fantasy VII Rebirth">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title text-primary">Final Fantasy VII Rebirth</h5>
                         <p class="card-text small">Plataforma: PS5 | Género: JRPG</p>
                         <p class="card-text flex-grow-1">La esperada continuación del remake, expandiendo la épica aventura de Cloud y sus compañeros.</p>
                         <p class="card-text text-info"><i class="fas fa-clock me-2"></i>Horas de juego: ~40-60h</p>
-                        <a href="#" class="btn btn-danger mt-auto">Ver Detalles</a>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <button type="button" class="btn btn-sm btn-danger view-details-btn" data-bs-toggle="modal" data-bs-target="#gameDetailModal">Ver Detalles</button>
+                            <button type="button" class="btn btn-sm btn-success add-to-user-library-btn">
+                                <i class="fas fa-plus-circle me-1"></i> Añadir a Mi Biblioteca
+                            </button>
+                        </div>
+                        <div class="add-to-library-message mt-2 text-center text-sm"></div>
                     </div>
                 </div>
             </div>
 
             <div class="col">
-                <div class="card h-100 game-card bg-dark text-white border-secondary">
+                <div class="card h-100 game-card bg-dark text-white border-secondary"
+                    data-game-title="Cyberpunk 2077"
+                    data-game-description="Adéntrate en Night City, un futuro distópico lleno de crimen, implantes y corporaciones."
+                    data-game-platform="PC, PS5, Xbox Series X/S" 
+                    data-game-genre="ARPG, Ciberpunk" 
+                    data-game-hours="8"
+                    data-game-image="/img/Cyberpunk_2077.jpg">
                     <img src="/img/Cyberpunk_2077.jpg" class="card-img-top" alt="Portada Cyberpunk 2077">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title text-primary">Cyberpunk 2077</h5>
                         <p class="card-text small">Plataforma: PC, PS5, Xbox Series X/S | Género: ARPG, Ciberpunk</p>
                         <p class="card-text flex-grow-1">Adéntrate en Night City, un futuro distópico lleno de crimen, implantes y corporaciones.</p>
                         <p class="card-text text-info"><i class="fas fa-clock me-2"></i>Horas de juego: ~60-100h</p>
-                        <a href="#" class="btn btn-danger mt-auto">Ver Detalles</a>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <button type="button" class="btn btn-sm btn-danger view-details-btn" data-bs-toggle="modal" data-bs-target="#gameDetailModal">Ver Detalles</button>
+                            <button type="button" class="btn btn-sm btn-success add-to-user-library-btn">
+                                <i class="fas fa-plus-circle me-1"></i> Añadir a Mi Biblioteca
+                            </button>
+                        </div>
+                        <div class="add-to-library-message mt-2 text-center text-sm"></div>
                     </div>
                 </div>
             </div>
@@ -121,6 +202,44 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <div class="modal fade" id="gameDetailModal" tabindex="-1" aria-labelledby="gameDetailModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-primary" id="gameDetailModalLabel">Detalles del Videojuego</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="" class="img-fluid rounded mb-3" alt="Portada del Juego" id="modal-game-image">
+                        </div>
+                        <div class="col-md-8">
+                            <h3 class="text-light" id="modal-game-title"></h3>
+                            <p class="small">Plataforma: <span id="modal-game-platform"></span> | Género: <span id="modal-game-genre"></span></p>
+                            <p id="modal-game-description" class="text-light"></p>
+                            <p class="text-secondary"><i class="fas fa-clock me-2"></i>Horas de juego: <span id="modal-game-hours"></span></p>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-top border-secondary">
+                        <h4 class="text-light mb-3">Logros / Trofeos</h4>
+                        <div id="modal-game-achievements-list">
+                            <p>No hay logros disponibles para este juego.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="/js/authService.js"></script>
+    <script src="/js/gameService.js"></script>
+    <script src="/js/categoriaPage.js"></script>
 </body>
 </html>

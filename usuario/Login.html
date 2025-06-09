@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReGames - Mi Biblioteca</title>
+    <title>Login - ReGamesCreative</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/styles.css">
+        xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
@@ -25,15 +25,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/index.html">Inicio</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Mi Biblioteca</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Añadir Juego</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Favoritos</a>
-                    </li>
                     
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCategories" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -44,7 +35,9 @@
                             <li><a class="dropdown-item" href="/categorias/rpg.html">RPG</a></li>
                             <li><a class="dropdown-item" href="/categorias/aventura.html">Aventura</a></li>
                             <li><a class="dropdown-item" href="/categorias/estrategia.html">Estrategia</a></li>
-                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
                             <li><a class="dropdown-item" href="/index.html">Ver Todas</a></li>
                         </ul>
                     </li>
@@ -70,69 +63,47 @@
             </div>
         </div>
     </header>
+
     <main class="container my-5 d-flex justify-content-center align-items-center" style="min-height: 60vh;">
         <div class="card-body shadow-lg p-4 p-md-5" style="max-width: 500px; width: 100%;">
-            <h1 class="text-center mb-5 text-primary">Registro</h1>
-            <form id="register-form" novalidate>
+            <h2 class="card-title text-center mb-4 text-light display-6 fw-bold">Iniciar Sesión</h2>
+            <form id="login-form" novalidate>
                 <div class="mb-3">
-                    <label for="nombre" class="form-label text-primary">Nombre completo</label>
-                    <input type="text" class="form-control" id="regFullNameInput" required>
-                    <div class="invalid-feedback">Este campo es obligatorio.</div>
+                    <label for="usernameInput" class="form-label ">Nombre de Usuario</label>
+                    <input type="email" class="form-control" id="usernameInput" placeholder="TuNombreDeUsuario" required>
                 </div>
                 <div class="mb-3">
-                    <label for="usuario" class="form-label text-primary">Usuario</label>
-                    <input type="text" class="form-control" id="regUsernameInput" required>
-                    <div class="invalid-feedback">Debes ingresar un nombre de usuario.</div>
+                    <label for="passwordInput" class="form-label ">Contraseña</label>
+                    <input type="password" class="form-control" id="passwordInput" placeholder="********" required>
                 </div>
-
-                <div class="mb-3">
-                    <label for="email" class="form-label text-primary">Correo electrónico</label>
-                    <input type="email" class="form-control" id="regEmailInput" required>
-                    <div class="invalid-feedback">Correo inválido.</div>
-                </div>
-
-                <div class="mb-3">
-                    <label for="fechaNacimiento" class="form-label text-primary">Fecha de nacimiento</label>
-                    <input type="date" class="form-control" id="regBirthDayInput" placeholder="********" required>
-                    <div class="invalid-feedback">Debes tener al menos 13 años.</div>
-                </div>
-
-                <div class="mb-3">
-                    <label for="password" class="form-label text-primary">Contraseña</label>
-                    <input type="password" class="form-control" id="regPasswordInput" placeholder="********" required>
-                    <div class="invalid-feedback">Debe tener mínimo 8 caracteres, 1 número, 1 mayúscula y 1 caracter
-                        especial.</div>
-                </div>
-
-                <div class="mb-3">
-                    <label for="confirmarPassword" class="form-label text-primary">Confirmar contraseña</label>
-                    <input type="password" class="form-control" id="regConfirmPasswordInput" required>
-                    <div class="invalid-feedback">Las contraseñas no coinciden.</div>
-                </div>
-                <div class="d-grid gap-2 d-md-block">
-                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
-                    <button type="reset" class="btn btn-primary btn-lg">Limpiar</button>
+                <div class="d-grid gap-2 mb-3">
+                    <button type="submit" class="btn btn-primary btn-lg">Entrar</button>
                 </div>
                 <p class="text-center">
-                        ¿Ya tienes una cuenta? <a href="login.html" class="text-primary text-decoration-none">Inicia sesión aquí</a>
-                    </p>
-                <div id="register-message" class="mt-3 text-center"></div>
+                    <a href="recuperar_contrasena.html" class="text-primary text-decoration-none">¿Olvidaste tu
+                        contraseña?</a>
+                </p>
+                <p class="text-center ">
+                    ¿No tienes una cuenta? <a href="registro.html" class="text-primary text-decoration-none">Regístrate
+                        aquí</a>
+                </p>
+                <div id="login-message" class="mt-3 text-center"></div>
             </form>
         </div>
 
     </main>
-    <footer class="footer bg-dark text-white text-center py-4 mt-5">
+
+    <footer class="footer bg-light text-dark text-center py-4 mt-5 shadow-sm border-top">
         <div class="container">
-            <p class="mb-0">&copy; 2025 ReGames. Todos los derechos reservados.</p>
+            <p class="mb-0">&copy; 2025 ReGamesCreative. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="/js/authService.js"></script>
-    <script src="/js/registroPage.js"></script>
-    <script src="/js/validaciones.js"></script>
+    <script src="/js/loginPage.js"></script>
 </body>
 
 </html>

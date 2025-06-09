@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReGamesCreative - Mi Biblioteca</title>
+    <title>Añadir Nuevo Juego - ReGamesCreative</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -26,7 +26,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/index.html">Inicio</a>
                     </li>
-                    
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCategories" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Categorías
@@ -70,67 +69,53 @@
     </header>
 
     <main class="container my-5">
-        <h2 class="text-center mb-5 display-5 fw-bold text-dark">ReGamesCreative</h2>
+        <h2 class="text-center mb-5 display-5 fw-bold text-light">Añadir Juegos</h2>
 
-        <section id="categories" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-            <div class="col">
-                <a href="categorias/accion.html" class="category-card-link">
-                    <div class="card h-100 category-card shadow-sm border-0">
-                        <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                            <h3 class="card-title text-primary">Acción</h3>
-                            <p class="card-text">Juegos de disparos, combate y aventura intensa.</p>
-                            <i class="fas fa-fist-raised fa-3x text-danger mt-3"></i>
-                        </div>
-                    </div>
-                </a>
+        <div id="add-game-sections">
+            <!-- La sección para añadir juegos manualmente (admin) o mensaje se cargará aquí -->
+            <div id="manual-add-section" class="card shadow-lg p-4 p-md-5 mx-auto bg-dark text-light mb-5" style="max-width: 700px; display: none;">
+                <div class="card-body" id="add-game-content-form">
+                    <!-- Formulario de añadir juego manual -->
+                </div>
             </div>
-            <div class="col">
-                <a href="categorias/rpg.html" class="category-card-link">
-                    <div class="card h-100 category-card shadow-sm border-0">
-                        <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                            <h3 class="card-title text-primary">RPG (Juegos de Rol)</h3>
-                            <p class="card-text">Historias profundas, personajes y progresión.</p>
-                            <i class="fas fa-hat-wizard fa-3x text-info mt-3"></i>
-                        </div>
-                    </div>
-                </a>
+
+            <!-- La sección para importar juegos de categoría (cualquier usuario logueado) se cargará aquí -->
+            <div id="import-from-category-section" class="bg-dark text-light p-4 rounded-lg shadow-lg" style="display: none;">
+                <h3 class="text-center text-primary mb-4">Importar Juegos de Categoría</h3>
+                <p class="text-center text-muted mb-4">Añade rápidamente juegos populares a tu biblioteca personal.</p>
+                <div id="predefined-games-list" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                    <!-- Los juegos predefinidos se inyectarán aquí -->
+                </div>
             </div>
-            <div class="col">
-                <a href="categorias/aventura.html" class="category-card-link">
-                    <div class="card h-100 category-card shadow-sm border-0">
-                        <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                            <h3 class="card-title text-primary">Aventura</h3>
-                            <p class="card-text">Exploración, resolución de acertijos y narrativa.</p>
-                            <i class="fas fa-map-marked-alt fa-3x text-warning mt-3"></i>
-                        </div>
-                    </div>
-                </a>
+
+            <!-- Mensaje para usuarios no logueados -->
+            <div id="not-logged-in-message" class="p-5 bg-secondary text-light rounded-lg shadow-xl text-center" style="display: none;">
+                <h3 class="text-3xl font-bold mb-4">Acceso Requerido</h3>
+                <p class="opacity-75">Inicia sesión para añadir juegos a tu biblioteca.</p>
+                <a href="/usuario/Login.html" class="btn btn-primary mt-3">Ir a Login</a>
             </div>
-            <div class="col">
-                <a href="categorias/estrategia.html" class="category-card-link">
-                    <div class="card h-100 category-card shadow-sm border-0">
-                        <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                            <h3 class="card-title text-primary">Estrategia</h3>
-                            <p class="card-text">Planificación táctica y gestión de recursos.</p>
-                            <i class="fas fa-chess-knight fa-3x text-success mt-3"></i>
-                        </div>
-                    </div>
-                </a>
+
+            <!-- Mensaje de acceso denegado para admin-only form -->
+            <div id="admin-access-denied" class="p-5 bg-danger text-white rounded-lg shadow-xl text-center" style="display: none;">
+                <h2 class="text-3xl font-bold mb-4">Acceso Denegado</h2>
+                <p class="opacity-75">Solo los usuarios con rol 'administrador' pueden añadir juegos manualmente.</p>
+                <p class="opacity-75 mt-2">Puedes importar juegos de la sección de abajo.</p>
             </div>
-        </section>
+        </div>
     </main>
 
-    <footer class="footer bg-dark text-white text-center py-4 mt-5">
+    <footer class="footer bg-light text-dark text-center py-4 mt-5 shadow-sm border-top">
         <div class="container">
-            <p class="mb-0">&copy; 2025 ReGames. Todos los derechos reservados.</p>
+            <p class="mb-0">&copy; 2025 ReGamesCreative. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="/js/authService.js"></script>
-    <script src="/js/indexPage.js"></script>
+    <script src="/js/gameService.js"></script>
+    <script src="/js/agregarJuegoPage.js"></script>
 </body>
 
 </html>
